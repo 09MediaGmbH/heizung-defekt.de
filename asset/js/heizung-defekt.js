@@ -47,5 +47,3 @@ footerCookieAccept.onclick = function(e) {
 //forEach Element scroll value font size und margin größer
 //when click - link verfolgen
 //return when not on the scroll value
-
-let search = document.querySelector(search_leistung_unter)
