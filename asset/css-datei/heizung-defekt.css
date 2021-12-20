@@ -1565,6 +1565,43 @@
                 .cont4_display_ueber_uns {
                     display: none;
                 }
+                .text_support {
+                    position: relative;
+                    width: 99%;
+                    height: 400px;
+                }
+                .text_support_text {
+                    width: 99%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .h1_service {
+                    width: 95%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-size: 40px;
+                }
+                .h2_service {
+                    width: 95%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+                .h3_service {
+                    width: 95%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+                .h4_service {
+                    width: 95%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-size: 20px;
+                }
+                .text_support_text {
+                    width: 95%;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
             }
             
             @media(max-width:600px) {
