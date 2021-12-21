@@ -279,7 +279,7 @@
             }
             
             p {
-                text-align: justify;
+                text-align: left;
             }
             
             orange {
@@ -321,7 +321,8 @@
                 font-weight: bold;
                 margin-top: 0px;
                 padding-top: 15px;
-                margin-left: 30px;
+                margin-left: auto;
+                margin-right: auto;
                 transition: .4s ease;
             }
             
@@ -930,7 +931,7 @@
                 margin-left: 10px;
                 margin-top: 10px;
                 margin-bottom: 50px;
-                text-align: justify;
+                text-align: left;
             }
             /**/
             
@@ -957,6 +958,34 @@
                 width: 80%;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            
+            .liste_lo {
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .liste_970 {
+                width: 970px;
+            }
+            
+            @media(max-width:1023px) {
+                .liste_970 {
+                    width: 85%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            
+            .liste_font {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+            }
+            
+            .liste_small_title {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 16px;
             }
             
             .teme1_text3 p {
@@ -1196,7 +1225,21 @@
                 margin-right: auto;
             }
             
+            .cont4_img_line1_haupt {
+                display: flex;
+                padding-left: 10px;
+                width: 690px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
             .cont4_img_line1 img {
+                height: 130px;
+                margin-left: 30px;
+                margin-right: 0px;
+            }
+            
+            .cont4_img_line1_haupt img {
                 height: 130px;
                 margin-left: 30px;
                 margin-right: 0px;
@@ -1456,6 +1499,10 @@
                 width: 270px;
             }
             
+            .logo_mittle_korrektur {
+                padding-top: 20px;
+            }
+            
             .logo_mittle img {
                 height: auto;
                 max-width: 220px;
@@ -1509,7 +1556,7 @@
                 .grid_item4_teme1,
                 .grid_item4_teme2 {
                     width: 95%;
-                    padding: 10px;
+                    padding: 10px 0px 10px 0px;
                 }
                 #background_1 {
                     background-color: #F5AA28;
@@ -1522,6 +1569,11 @@
                     width: 100%;
                     padding: 0px 0px 0px 0px;
                 }
+                .cont4_img_line1_haupt .img2,
+                .cont4_img_line1_haupt .img3,
+                .cont4_img_line1_haupt .img4 {
+                    display: none;
+                }
                 .cont4_img_line1 .img2,
                 .cont4_img_line1 .img3,
                 .cont4_img_line1 .img4 {
@@ -1531,7 +1583,18 @@
                     margin-top: 10px;
                     width: 90%;
                 }
+                .cont4_img_line1_haupt {
+                    margin-top: 10px;
+                    width: 90%;
+                }
                 .cont4_img_line1 img {
+                    width: 95%;
+                    height: 160px;
+                    object-position: -50% 35%;
+                    object-fit: cover;
+                    margin-left: 0px;
+                }
+                .cont4_img_line1_haupt img {
                     width: 95%;
                     height: 160px;
                     object-position: -50% 35%;
@@ -1690,6 +1753,11 @@
             @media(max-width: 1023px) {
                 #item4_titel_config_info2 {
                     width: 100%;
+                }
+                .grid_item4 h2 {
+                    width: 85%;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
             }
             /*Warum Ausfall untere Teile*/
@@ -1899,6 +1967,12 @@
             }
             
             @media(max-width:1020px) {
+                .under_extra_info1_heizung h2,
+                .under_extra_info1_heizung h3,
+                .under_extra_info1_heizung p {
+                    color: #3B4656;
+                    text-align: left;
+                }
                 .display_under_none {
                     display: none;
                 }
@@ -2412,4 +2486,9 @@
                 #footer-cookie {
                     bottom: 100px;
                 }
+            }
+            /*ul ol li*/
+            
+            .li_font {
+                font-family: Arial, Helvetica, sans-serif;
             }
