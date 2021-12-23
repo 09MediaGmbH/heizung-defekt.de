@@ -70,6 +70,10 @@
                 top: 200px;
             }
             
+            .h1_service {
+                height: 300px;
+            }
+            
             .ausfall_seite_h1 h1 {
                 width: 700px;
                 margin-left: auto;
@@ -321,9 +325,8 @@
                 font-weight: bold;
                 margin-top: 0px;
                 padding-top: 15px;
-                margin-left: auto;
-                margin-right: auto;
                 transition: .4s ease;
+                text-align: center;
             }
             
             .separator_item {
@@ -1534,6 +1537,12 @@
                 margin-top: 20px;
                 margin-left: 90px;
             }
+            
+            .text_support_text {
+                width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
+            }
             /*ende*/
             
             @media(max-width: 1023px) {
@@ -1632,11 +1641,6 @@
                     position: relative;
                     width: 99%;
                     height: 400px;
-                }
-                .text_support_text {
-                    width: 99%;
-                    margin-left: auto;
-                    margin-right: auto;
                 }
                 .h1_service {
                     width: 95%;
