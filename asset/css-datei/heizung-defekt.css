@@ -1243,8 +1243,8 @@
                 display: flex;
                 padding-left: 10px;
                 width: 690px;
-                margin-left: auto;
                 margin-right: auto;
+                margin-left: auto;
             }
             
             .cont4_img_line1 img {
@@ -1255,8 +1255,15 @@
             
             .cont4_img_line1_haupt img {
                 height: 130px;
-                margin-left: 30px;
                 margin-right: 0px;
+            }
+            
+            .cont4_img_line1_haupt .img2,
+            .cont4_img_line1_haupt .img3,
+            .cont4_img_line1_haupt .img4 {
+                height: 130px;
+                margin-right: 0px;
+                margin-left: 25px;
             }
             
             .seite1_part3 {
@@ -1484,6 +1491,10 @@
                 border: #3B4656 solid 1px;
             }
             
+            .kontakt_text_famili::placeholder {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            
             .cont4_seite1 button {
                 width: 100px;
                 background-color: #F5AA28;
@@ -1504,6 +1515,7 @@
             .cont4_seite1 button:hover {
                 background-color: #3B4656;
                 color: #F5AA28;
+                font-size: 14px;
             }
             /*    ENDE KONTAKT  */
             /*===*logo mittel seite ===*/
