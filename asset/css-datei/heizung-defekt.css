@@ -37,6 +37,17 @@
                 margin-right: auto;
             }
             
+            .haupt_seite_h1 p {
+                position: relative;
+                z-index: 2;
+                top: 200px;
+                width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                color: #3B4656;
+                font-size: 30px;
+            }
+            
             .ueber_uns_seite_h1 h1 {
                 width: 800px;
                 margin-left: auto;
@@ -261,15 +272,18 @@
             h2 {
                 font-weight: lighter;
                 margin: 0px;
+                color: #3B4656;
             }
             
             h3 {
                 font-weight: lighter;
+                color: #3B4656;
             }
             
             h4 {
                 font-weight: lighter;
                 font-size: 25px;
+                color: #3B4656;
             }
             
             @media(max-width:1023px) {
@@ -779,7 +793,6 @@
                 display: flex;
                 height: auto;
                 padding: 10px;
-                border-radius: 0px 0px 20px 20px;
             }
             
             .cont3_lesitung_config img {
@@ -948,7 +961,6 @@
             }
             
             .grid_item4_teme2 h2 {
-                text-align: center;
                 margin-top: 20px;
             }
             
@@ -958,9 +970,10 @@
             }
             
             .liste_li {
-                width: 80%;
+                width: 99%;
                 margin-left: auto;
                 margin-right: auto;
+                font-size: 14px;
             }
             
             .liste_lo {
@@ -1003,7 +1016,8 @@
                 width: 230px;
                 object-fit: cover;
                 object-position: 100% 10%;
-                margin-left: 50px;
+                margin-left: 0px;
+                margin-right: 50px;
             }
             
             .grid_item4_img_text1 {
@@ -1013,7 +1027,7 @@
             .grid_item4_img_text1 img {
                 height: 150px;
                 margin-top: 10px;
-                margin-left: 50px;
+                margin-left: 0px;
                 margin-right: 0px;
             }
             
@@ -1037,12 +1051,9 @@
             .stage1_titel {
                 margin-top: 3px;
                 color: #3B4656;
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
+                width: 99%;
                 padding-top: 5px;
                 padding-bottom: 5px;
-                text-align: center;
             }
             
             .stage1_titel_warum {
@@ -1335,6 +1346,7 @@
                 color: #3B4656;
                 margin-right: auto;
                 margin-left: auto;
+                padding-bottom: 20px;
             }
             
             .open_service:active {
@@ -1687,9 +1699,8 @@
                 }
                 .grid_item4_teme1_sub1 img {
                     height: auto;
-                    width: 80%;
+                    width: 0%;
                     margin-left: 10%;
-                    margin-right: auto;
                 }
                 .grid_item4_stage3_h3_img {
                     flex-direction: column;
@@ -1732,7 +1743,6 @@
             }
             
             .grid_item4 h3 {
-                text-align: center;
                 color: #3B4656;
             }
             
