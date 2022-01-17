@@ -1468,8 +1468,8 @@
                 }
                 .seite1_part3 p {
                     text-align: left;
-                    margin: 25px 15px 20px 15px;
-                    padding: 0px 10px 0px 10px;
+                    margin: 25px 5px 20px 5px;
+                    padding: 0px 0px 0px 0px;
                 }
                 .bewerbung {
                     width: 300px;
@@ -1588,6 +1588,34 @@
                 width: 1024px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            
+            .ueberuns_pic_korrekt {
+                width: 150px;
+                margin-top: 20px;
+                margin-left: 30px;
+            }
+            
+            .ueberuns_pic_korrekt:hover {
+                transform: scale( 1.1, 1.1);
+                transition: 0.2s ease;
+            }
+            
+            .leistungen_pic_korrekt {
+                width: 150px;
+                margin-top: 50px;
+                margin-left: 30px;
+                box-shadow: #303030 2px 2px;
+            }
+            
+            .leistungen_pic_korrekt:hover {
+                transform: scale( 1.1, 1.1);
+                transition: 0.2s ease;
+            }
+            
+            .img_seite_hnort1 {
+                width: 200px;
+                margin: 100px 0px 0px 20px;
             }
             /*ende*/
             
@@ -1899,8 +1927,15 @@
                 display: flex;
             }
             
+            .extra_info_ort {
+                margin-top: 0px;
+                width: 970px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
             .under_extra_info1 {
-                width: 700px;
+                width: 100%;
             }
             
             .under_extra_info1 h3 {
@@ -1924,7 +1959,7 @@
             .under_extra_info1 h2,
             .under_extra_info1 h3,
             .under_extra_info1 p {
-                width: 650px;
+                width: 100%;
                 color: #3B4656;
             }
             
@@ -2009,6 +2044,10 @@
             }
             
             @media(max-width:1020px) {
+                .extra_info_ort {
+                    margin-top: 0px;
+                    width: 95%;
+                }
                 .under_extra_info1_heizung h2,
                 .under_extra_info1_heizung h3,
                 .under_extra_info1_heizung p {
@@ -2034,14 +2073,9 @@
                 }
                 .under_extra_info1 h2,
                 .under_extra_info1 h3,
-                .under_extra_info1 p {
-                    width: 80%;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                .under_extra_info2 h2,
-                .under_extra_info2 h3,
-                .under_extra_info2 p {
+                .under_extra_info1 p,
+                .under_extra_info1 ul,
+                .under_extra_info1 li {
                     width: 80%;
                     margin-left: auto;
                     margin-right: auto;
@@ -2540,14 +2574,14 @@
                 width: 1024px;
                 margin-left: auto;
                 margin-right: auto;
-                display: grid;
-                grid-template-columns: 90px auto;
+                display: flex;
+                column-gap: 25px;
                 height: 30px;
                 background-color: #F5AA28;
                 padding-top: 10px;
             }
             
-            @media(width:1023px) {
+            @media(max-width:1023px) {
                 .breadcrumb {
                     width: 100%;
                 }
