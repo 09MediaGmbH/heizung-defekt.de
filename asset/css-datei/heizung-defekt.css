@@ -153,9 +153,28 @@
                 margin-bottom: 100px;
             }
             
-            .faq_h1 h1 {}
+            .seite_text_haupt p {
+                font-size: 12px;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .seite_pic_haupt {
+                margin-top: 50px;
+                width: 230px;
+                margin-left: 20px;
+            }
             
             @media(max-width: 1023px) {
+                .haupt_seite_h1 p {
+                    position: relative;
+                    z-index: 2;
+                    top: 400px;
+                    width: 80%;
+                    color: #3B4656;
+                    font-size: 30px;
+                }
                 .wasserschaden_seite_h1 h1 {
                     width: 50%;
                     top: 200px;
@@ -209,7 +228,7 @@
                 .unter1_seite_h1 h1 {
                     width: 55%;
                     margin-left: auto;
-                    margin-right: 20px;
+                    margin-right: 40px;
                     font-size: 30px;
                     top: 200px;
                 }
@@ -900,7 +919,8 @@
                     object-fit: cover;
                 }
                 .cont3_text {
-                    width: 95%;
+                    width: 100%;
+                    padding: 0px;
                 }
             }
             /*========Section Container4=======*/
@@ -1020,7 +1040,6 @@
             
             .liste_font {
                 font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
             }
             
             .liste_small_title {
@@ -1029,7 +1048,10 @@
             }
             
             .teme1_text3 p {
-                margin: 0px 20px 0px 0px;
+                margin: 0px 0px 0px 0px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .grid_item4_teme1_sub1 {
@@ -1056,8 +1078,7 @@
             }
             
             .grid_item4_img_text1 p {
-                max-width: 320px;
-                margin: 0px 15px 0px 10px;
+                margin: 0px 0px 0px 30px;
             }
             
             #item4_titel_config {
@@ -1075,7 +1096,7 @@
             .stage1_titel {
                 margin-top: 3px;
                 color: #3B4656;
-                width: 99%;
+                width: 100%;
                 padding-top: 5px;
                 padding-bottom: 5px;
             }
@@ -1100,7 +1121,9 @@
                 font-size: 14px;
                 color: #3B4656;
                 line-height: 18px;
-                width: 98%;
+                width: 95%;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .grid_item4_teme3_stage3 h3 {
@@ -1399,6 +1422,10 @@
             }
             
             @media(max-width:1023px) {
+                .grid_item4_img_text1 p {
+                    margin: 0px auto 0px auto;
+                    width: 90%;
+                }
                 .grid_item4_teme4_stage3_korrektur h2 {
                     width: 80%;
                     margin-left: auto;
@@ -1464,11 +1491,11 @@
                     margin-bottom: 0px;
                 }
                 .seite1_part3 {
-                    padding: 20px 5px 20px 5px;
+                    padding: 20px 0px 20px 0px;
                 }
                 .seite1_part3 p {
                     text-align: left;
-                    margin: 25px 5px 20px 5px;
+                    margin: 25px 0px 20px 5px;
                     padding: 0px 0px 0px 0px;
                 }
                 .bewerbung {
@@ -1620,6 +1647,11 @@
             /*ende*/
             
             @media(max-width: 1023px) {
+                .kontakt p {
+                    margin: 20px 0px 10px 0px;
+                    font-size: 17px;
+                    text-align: center;
+                }
                 .seite1_part2 {
                     display: none;
                 }
@@ -1638,8 +1670,9 @@
                 }
                 .grid_item4_teme1,
                 .grid_item4_teme2 {
-                    width: 95%;
-                    padding: 10px 0px 10px 0px;
+                    width: 90%;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
                 #background_1 {
                     background-color: #F5AA28;
@@ -1647,6 +1680,7 @@
                 .stage1_titel {
                     text-align: left;
                     padding: 10px;
+                    width: 80%;
                 }
                 .grid_item4_teme1_stage3 {
                     width: 100%;
@@ -1664,14 +1698,14 @@
                 }
                 .cont4_img_line1 {
                     margin-top: 10px;
-                    width: 90%;
+                    padding-left: 0px;
                 }
                 .cont4_img_line1_haupt {
-                    margin-top: 10px;
-                    width: 90%;
+                    margin-top: 0px;
+                    width: 95%;
                 }
                 .cont4_img_line1 img {
-                    width: 95%;
+                    width: 100%;
                     height: 160px;
                     object-position: -50% 35%;
                     object-fit: cover;
@@ -1702,7 +1736,7 @@
                     padding: 0px 10px;
                 }
                 .kontakt_korrektur {
-                    width: 95%;
+                    width: 100%;
                     margin: 0px;
                 }
                 .grid_item4_teme1_heizung_ausfall {
@@ -1713,33 +1747,33 @@
                 }
                 .text_support {
                     position: relative;
-                    width: 99%;
+                    width: 100%;
                     height: 400px;
                 }
                 .h1_service {
-                    width: 95%;
+                    width: 100%;
                     margin-top: auto;
                     margin-bottom: auto;
                     font-size: 40px;
                 }
                 .h2_service {
-                    width: 95%;
+                    width: 100%;
                     margin-top: auto;
                     margin-bottom: auto;
                 }
                 .h3_service {
-                    width: 95%;
+                    width: 100%;
                     margin-top: auto;
                     margin-bottom: auto;
                 }
                 .h4_service {
-                    width: 95%;
+                    width: 100%;
                     margin-top: auto;
                     margin-bottom: auto;
                     font-size: 20px;
                 }
                 .text_support_text {
-                    width: 95%;
+                    width: 100%;
                     margin-top: auto;
                     margin-bottom: auto;
                 }
@@ -1776,6 +1810,7 @@
                     margin-right: auto;
                 }
                 .grid_item4_stage3_h3_img h3 {
+                    width: 80%;
                     margin-left: auto;
                     margin-right: auto;
                 }
@@ -1821,6 +1856,11 @@
             }
             
             @media(max-width: 1023px) {
+                .grid_item4 h3 {
+                    width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
                 #item4_titel_config_info2 {
                     width: 100%;
                 }
@@ -1838,6 +1878,8 @@
             
             .grid_item4_teme2_stage3 p {
                 width: 100%;
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .grid_item4_teme2_stage3 h2 {
@@ -1887,6 +1929,11 @@
             }
             
             @media(max-width:1023px) {
+                .grid_item4_teme2_stage3 p {
+                    width: 90%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
                 .cont4_img_line1 {
                     flex-direction: column;
                     width: 100%;
@@ -1895,7 +1942,7 @@
                     width: 80%;
                 }
                 .city_link {
-                    width: 95%;
+                    width: 100%;
                     padding: 2px;
                     grid-template-columns: auto auto;
                     transition: .4s ease;
@@ -2046,7 +2093,7 @@
             @media(max-width:1020px) {
                 .extra_info_ort {
                     margin-top: 0px;
-                    width: 95%;
+                    width: 100%;
                 }
                 .under_extra_info1_heizung h2,
                 .under_extra_info1_heizung h3,
@@ -2250,7 +2297,7 @@
             
             @media(max-width: 1020px) {
                 .footer_division {
-                    margin-left: 20px;
+                    margin-left: 10px;
                     -ms-grid-columns: auto;
                     grid-template-columns: auto;
                 }
@@ -2285,7 +2332,7 @@
             .input_type_1 {
                 margin-top: 10px;
                 height: 60px;
-                width: 99%;
+                width: 100%;
                 border: #3B4656 solid 2px;
                 font-size: 18px;
             }
@@ -2293,7 +2340,7 @@
             .input_type_2 {
                 position: relative;
                 height: 100px;
-                width: 99%;
+                width: 100%;
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 10px;
