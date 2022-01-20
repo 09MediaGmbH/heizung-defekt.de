@@ -168,10 +168,12 @@
             
             @media(max-width: 1023px) {
                 .haupt_seite_h1 p {
+                    width: auto;
                     position: relative;
                     z-index: 2;
-                    top: 400px;
-                    width: 80%;
+                    top: 300px;
+                    text-align: right;
+                    right: 50px;
                     color: #3B4656;
                     font-size: 30px;
                 }
@@ -1495,7 +1497,7 @@
                 }
                 .seite1_part3 p {
                     text-align: left;
-                    margin: 25px 0px 20px 5px;
+                    margin: 25px 0px 20px 10px;
                     padding: 0px 0px 0px 0px;
                 }
                 .bewerbung {
@@ -2617,8 +2619,12 @@
             }
             /*breadcrumb*/
             
+            .ul_breadcrumb ul {
+                width: 900px;
+            }
+            
             .breadcrumb {
-                width: 1024px;
+                width: 900px;
                 margin-left: auto;
                 margin-right: auto;
                 display: flex;
@@ -2630,6 +2636,19 @@
             
             @media(max-width:1023px) {
                 .breadcrumb {
-                    width: 100%;
+                    width: auto;
+                    font-size: 12px;
+                }
+                .ul_breadcrumb ul {
+                    width: auto;
+                }
+            }
+            
+            @media(max-width:400px) {
+                .breadcrumb {
+                    margin-left: 0px;
+                }
+                .ul_breadcrumb ul {
+                    margin-left: 0px;
                 }
             }
