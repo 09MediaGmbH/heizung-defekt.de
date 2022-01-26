@@ -58,7 +58,7 @@
             }
             
             .unter1_seite_h1 h1 {
-                width: 700px;
+                width: fit-content;
                 margin-left: auto;
                 margin-right: auto;
                 position: relative;
