@@ -1984,6 +1984,16 @@
                 margin-right: auto;
             }
             
+            .img_display_1 {
+                width: 1024px;
+            }
+            
+            .extra_info_ort img {
+                height: 250px;
+                margin-left: 20px;
+                margin-top: 20px;
+            }
+            
             .under_extra_info1 {
                 width: 100%;
             }
