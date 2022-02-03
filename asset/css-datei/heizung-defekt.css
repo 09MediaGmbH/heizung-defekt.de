@@ -730,8 +730,9 @@
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: 10% 30%;
-                height: 750px;
+                height: 700px;
                 padding-top: 20px;
+                width: 1024px;
             }
             
             .container2 img {
@@ -746,6 +747,7 @@
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: 30%, 50%;
+                    width: 100%;
                 }
             }
             /*Hero Warum*/
@@ -1589,10 +1591,14 @@
             }
             
             .grid_item4_teme1_stage3 {
+                width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
                 margin-top: 20px;
                 padding: 0px 5px 30px 15px;
                 line-height: 18px;
                 background-color: #F5AA28;
+                color: #3B4656;
             }
             
             .grid_item4_teme1_stage3 p {
@@ -1827,6 +1833,7 @@
                     padding: 0px 0px 20px 0px;
                     line-height: 18px;
                     background-color: #F5AA28;
+                    width: 100%;
                 }
                 .grid_item4_teme1_stage3 p {
                     margin: 0px 0px 0px 0px;
