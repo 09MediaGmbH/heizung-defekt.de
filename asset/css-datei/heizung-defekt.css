@@ -428,7 +428,7 @@
                 z-index: 1;
                 position: absolute;
                 height: 380px;
-                width: 100%;
+                width: 1024px;
                 top: 200px;
             }
             
@@ -467,6 +467,7 @@
                 .hero_oh_boy {
                     height: 770px;
                     top: 0px;
+                    width: 100%;
                 }
             }
             
