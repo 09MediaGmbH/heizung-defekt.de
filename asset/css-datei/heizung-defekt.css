@@ -113,7 +113,7 @@
             }
             
             .wasserschaden_seite_h1 h1 {
-                width: 1023px;
+                width: 1024px;
                 font-size: 35px;
                 margin-left: auto;
                 margin-right: auto;
@@ -781,6 +781,9 @@
             /*Hero Warum*/
             
             .container2_warum {
+                width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
                 background-image: url(../pic/heizung_defekt_warum_fallt_hero.jpg);
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -796,6 +799,9 @@
             }
             
             .container2_wasser {
+                width: 1024px;
+                margin-left: auto;
+                margin-right: auto;
                 background-image: url(../pic/hero_heizung_wasserschaden.jpg);
                 background-repeat: no-repeat;
                 background-size: 130%;
@@ -837,6 +843,8 @@
             
             @media(max-width: 1023px) {
                 .container2_warum {
+                    width: auto;
+                    height: 500px;
                     background-image: url(../pic/heizung_defekt_warum_fallt_hero_small.jpg);
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -850,6 +858,7 @@
             
             @media(max-width: 700px) {
                 .container2_wasser {
+                    width: auto;
                     background-size: cover;
                     background-position: 60%, 90%;
                 }
