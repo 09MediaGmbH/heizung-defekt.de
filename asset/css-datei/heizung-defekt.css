@@ -2707,3 +2707,8 @@
                     margin-left: 0px;
                 }
             }
+            
+            .a_no_deco a {
+                text-decoration: none;
+                color: #303030;
+            }
