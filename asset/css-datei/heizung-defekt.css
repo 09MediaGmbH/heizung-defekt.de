@@ -615,6 +615,7 @@
             }
             
             .search_leistung_unter {
+                display: none;
                 position: relative;
                 top: 250px;
                 margin-left: auto;
