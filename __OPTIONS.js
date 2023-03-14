@@ -29,7 +29,7 @@ const OPTIONS = {
   UNTERORDNER: "", // ==> Falls im UNTERORDNER View ein weiterer UNTERORDNER existiert
   DOMAIN: process.env.DOMAIN_ENV || "heizung-defekt.de", // ==> Domain für die Sitemap
   UPLOAD_DATE: "2023-03-13", // ==> Datum für die Sitemap
-  KEYWORD_REVERSE: false, // ==> https://domain.de/keyword-hauptort/ort oder if true https://domain.de/hauptort/keyword-ort
+  KEYWORD_REVERSE: true, // ==> https://domain.de/keyword-hauptort/ort oder if true https://domain.de/hauptort/keyword-ort
   DYN_LOGO: true,
   DEV_MODE: process.env.DEV_MODE || false,
 };

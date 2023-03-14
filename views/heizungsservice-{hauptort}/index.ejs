@@ -720,12 +720,17 @@
                                     <li><a href="https://schaedlingsbekaempfung-24h.de/schaedlingsbekaempfung-<%= stadtone.hauptortUrl %>/">Schädlingsbekämpfung <%= stadtone.hauptort %></a></li>
                                     
                                 </div>
+                                <p><% for(let ort = 0; ort <= arr.length-2; ort++) {%>
+                                    <a href="/<%= keyword %><%= arr[ort].hauptortUrl %>/<%= arr[ort].ortUrl %>/"><%= arr[ort].ort %></a>,
+                                    <%} %>
+                                    <a
+                                      href="/<%= keyword %><%= arr[arr.length-1].hauptortUrl %>/<%= arr[arr.length-1].ortUrl %>/"><%= arr[arr.length-1].ort %></a></p>
+                    
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <%- include("footerpartial/randomstaedte") %>
 
             <!--===Container 5===-->
             <div class="container5" id="preis">
