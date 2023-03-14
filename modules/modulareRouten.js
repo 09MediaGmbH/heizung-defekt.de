@@ -46,7 +46,7 @@ const modRoutes = (KEYWORD_REVERSE, UNTERORDNER, keyword) => {
         hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       const stadtone = await StaedteListe.findOne({
-        ortUrl: hauptort.replace(/[0-9]/g, ""),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
       if (stadtone === null) {
@@ -125,7 +125,7 @@ const modRoutes = (KEYWORD_REVERSE, UNTERORDNER, keyword) => {
     router.get("/:hauptort", async (req, res) => {
       const { hauptort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
+        hauptortUrl: hauptort,
       });
       const stadtone = await StaedteListe.findOne({
         hauptortUrl: hauptort.replace(/[0-9]/g, ""),
@@ -161,7 +161,7 @@ const modRoutes = (KEYWORD_REVERSE, UNTERORDNER, keyword) => {
     router.get(`/:hauptort/${keyword}:ort/`, async (req, res) => {
       const { hauptort, ort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
+        hauptortUrl: hauptort,
       });
       const stadtone = await StaedteListe.findOne({
         ortUrl: ortRegex(ort),
