@@ -7,8 +7,11 @@ const staedteSchema = new mongoose.Schema({
   hauptortUrl: String,
   bundesland: String,
   bundeslandUrl: String,
+  latitude: Number,
+  longitude: Number,
+  short_code: String,
 });
 
-const StaedteListe = mongoose.model("staedte", staedteSchema);
+const StaedteListe = mongoose.model("staedte_geo", staedteSchema);
 
 module.exports = StaedteListe;

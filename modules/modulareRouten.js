@@ -8,8 +8,12 @@ const {
   ANZAHL_FUER_FOOTER_STAEDTE,
   KEYWORDS,
   UNTERORDNER,
+  DOMAIN,
   KEYWORD_REVERSE,
 } = require("../__OPTIONS");
+
+const SITE_KEY = process.env.SITE_KEY;
+
 //====================================
 
 //costume Modules=====================
@@ -36,57 +40,84 @@ const modRoutes = (KEYWORD_REVERSE, UNTERORDNER, keyword) => {
 
   if (!KEYWORD_REVERSE) {
     //Unterseiten=========================
-    router.get(`/${keyword}-:hauptort`, async (req, res) => {
+    router.get(`/${keyword}:hauptort`, async (req, res) => {
       const { hauptort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       const stadtone = await StaedteListe.findOne({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        ortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
-      const mbURL = mapBoxApiUrl(stadtone.hauptort, stadtone.bundesland);
-      const geolocationInvers = geoData(mbURL).coordinates;
-      const short_code = geoShortCode(mbURL);
-      const geolocation = `${geolocationInvers[1]},${geolocationInvers[0]}`;
-      const geopos = `${geolocationInvers[1]};${geolocationInvers[0]}`;
-
-      res.render(`${UNTERORDNER}${keyword}-{hauptort}/`, {
+      if (stadtone === null) {
+        return res.render("index", { SITE_KEY, DOMAIN });
+      }
+      if (stadtone !== null) {
+        // const mbURL = mapBoxApiUrl(stadtone.hauptortUrl,stadtone.bundeslandUrl);
+        const geolocationInvers = [0, 0];
+        const short_code = stadtone.short_code;
+        if (geolocationInvers != []) {
+          const latitude = stadtone.latitude;
+          const longitude = stadtone.longitude;
+          const geolocation = `${latitude},${longitude}`;
+          const geopos = `${latitude};${longitude}`;
+          return res.render(`${UNTERORDNER}${keyword}{hauptort}/`, {
+            stadtone,
+            SITE_KEY,
+            DOMAIN,
+            arr,
+            keyword,
+            geolocation,
+            short_code,
+            geopos,
+            latitude,
+            longitude,
+          });
+        }
+      }
+      return res.render(`${UNTERORDNER}${keyword}{hauptort}/`, {
         stadtone,
+        SITE_KEY,
+        DOMAIN,
         arr,
         keyword,
-        geolocation,
-        short_code,
-        geopos,
       });
     });
-    router.get(`/${keyword}-:hauptort/:ort/`, async (req, res) => {
+    router.get(`/${keyword}:hauptort/:ort/`, async (req, res) => {
       const { hauptort, ort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       const stadtone = await StaedteListe.findOne({
-        ortUrl: ortRegex(ort.replace(/[0-9]/g, "")),
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        ortUrl: ort.replace(/[0-9]/g, ""),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
-      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
-      const mbURL = mapBoxApiUrl(
-        stadtone.ort.replace(/[0-9]/g, ""),
-        stadtone.bundesland
-      );
-      const geolocationInvers = geoData(mbURL).coordinates;
-      const short_code = geoShortCode(mbURL);
+      if (stadtone === null) {
+        return res.render("index", { SITE_KEY, DOMAIN });
+      }
 
-      const geolocation = `${geolocationInvers[1]},${geolocationInvers[0]}`;
-      const geopos = `${geolocationInvers[1]};${geolocationInvers[0]}`;
-      res.render(`${UNTERORDNER}${keyword}-{hauptort}/{ort}`, {
-        stadtone,
-        arr,
-        keyword,
-        geolocation,
-        short_code,
-        geopos,
-      });
+      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
+      // const mbURL = mapBoxApiUrl(stadtone.ortUrl, stadtone.bundeslandUrl);
+      const geolocationInvers = [0, 0];
+      const short_code = stadtone.short_code;
+      if (geolocationInvers != []) {
+        const latitude = stadtone.latitude;
+        const longitude = stadtone.longitude;
+        const geolocation = `${latitude},${longitude}`;
+        const geopos = `${latitude};${longitude}`;
+        return res.render(`${UNTERORDNER}${keyword}{hauptort}/{ort}`, {
+          stadtone,
+          SITE_KEY,
+          DOMAIN,
+          arr,
+          keyword,
+          geolocation,
+          short_code,
+          geopos,
+          latitude,
+          longitude,
+        });
+      }
     });
     //====================================
   } else {
@@ -94,55 +125,74 @@ const modRoutes = (KEYWORD_REVERSE, UNTERORDNER, keyword) => {
     router.get("/:hauptort", async (req, res) => {
       const { hauptort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       const stadtone = await StaedteListe.findOne({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
-      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
-      const mbURL = mapBoxApiUrl(stadtone.hauptort, stadtone.bundesland);
-      const geolocationInvers = geoData(mbURL).coordinates;
-      const short_code = geoShortCode(mbURL);
+      if (stadtone === null) {
+        return res.render("index", { SITE_KEY, DOMAIN });
+      }
 
-      const geolocation = `${geolocationInvers[1]},${geolocationInvers[0]}`;
-      const geopos = `${geolocationInvers[1]};${geolocationInvers[0]}`;
-      res.render(`${UNTERORDNER}{hauptort}/`, {
-        stadtone,
-        arr,
-        keyword,
-        geolocation,
-        short_code,
-        geopos,
-      });
+      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
+      // const mbURL = mapBoxApiUrl(stadtone.hauptortUrl, stadtone.bundeslandUrl);
+      const geolocationInvers = [0, 0];
+      const short_code = stadtone.short_code;
+      if (geolocationInvers != []) {
+        const latitude = stadtone.latitude;
+        const longitude = stadtone.longitude;
+        const geolocation = `${latitude},${longitude}`;
+        const geopos = `${latitude};${longitude}`;
+        return res.render(`${UNTERORDNER}{hauptort}/`, {
+          stadtone,
+          SITE_KEY,
+          DOMAIN,
+          arr,
+          keyword,
+          geolocation,
+          short_code,
+          geopos,
+          latitude,
+          longitude,
+        });
+      }
     });
 
-    router.get(`/:hauptort/${keyword}-:ort/`, async (req, res) => {
+    router.get(`/:hauptort/${keyword}:ort/`, async (req, res) => {
       const { hauptort, ort } = req.params;
       const stadt = await StaedteListe.find({
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
       const stadtone = await StaedteListe.findOne({
         ortUrl: ortRegex(ort),
-        hauptortUrl: hauptortRegex(hauptort.replace(/[0-9]/g, "")),
+        hauptortUrl: hauptort.replace(/[0-9]/g, ""),
       });
-      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
-      const mbURL = mapBoxApiUrl(
-        `${stadtone.hauptort} ${stadtone.ort}`,
-        stadtone.bundesland
-      );
-      const geolocationInvers = geoData(mbURL).coordinates;
-      const short_code = geoShortCode(mbURL);
+      if (stadtone === null) {
+        return res.render("index", { SITE_KEY, DOMAIN });
+      }
 
-      const geolocation = `${geolocationInvers[1]},${geolocationInvers[0]}`;
-      const geopos = `${geolocationInvers[1]};${geolocationInvers[0]}`;
-      res.render(`${UNTERORDNER}{hauptort}/${keyword}-{ort}`, {
-        stadtone,
-        arr,
-        keyword,
-        geolocation,
-        short_code,
-        geopos,
-      });
+      let arr = randomnArr(stadt, ANZAHL_FUER_FOOTER_STAEDTE);
+      // const mbURL = mapBoxApiUrl(stadtone.ortUrl, stadtone.bundeslandUrl);
+      const geolocationInvers = [0, 0];
+      const short_code = stadtone.short_code;
+      if (geolocationInvers != []) {
+        const latitude = stadtone.latitude;
+        const longitude = stadtone.longitude;
+        const geolocation = `${latitude},${longitude}`;
+        const geopos = `${latitude};${longitude}`;
+        return res.render(`${UNTERORDNER}{hauptort}/${keyword}{ort}`, {
+          stadtone,
+          SITE_KEY,
+          DOMAIN,
+          arr,
+          keyword,
+          geolocation,
+          short_code,
+          geopos,
+          latitude,
+          longitude,
+        });
+      }
     });
     //====================================
   }

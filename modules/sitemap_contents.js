@@ -19,11 +19,11 @@ const sitemap_contents = (keyword, counter, nenner, starter) => {
   }
   if (KEYWORD_REVERSE) {
     stadt.forEach((route) => {
-      urlLocs.push(`${urlLoc}${route.hauptortUrl}/${keyword}-${route.ortUrl}`);
+      urlLocs.push(`${urlLoc}${route.hauptortUrl}/${keyword}${route.ortUrl}/`);
     });
   } else {
     stadt.forEach((route) => {
-      urlLocs.push(`${urlLoc}${keyword}-${route.hauptortUrl}/${route.ortUrl}`);
+      urlLocs.push(`${urlLoc}${keyword}${route.hauptortUrl}/${route.ortUrl}/`);
     });
   }
 

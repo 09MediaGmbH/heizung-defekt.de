@@ -1,10 +1,10 @@
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 require("dotenv").config();
-const mapBoxToken = process.env.MAPBOX_API_KEY;
+const mapToken = process.env.MAP_API_KEY;
 
 const mapBoxApiUrl = (ort, bundesland) =>
-  `https://api.mapbox.com/geocoding/v5/mapbox.places/${ort}%2C%20${bundesland}.json?country=de&limit=1&types=place%2Cpostcode&language=de&access_token=${mapBoxToken}`;
+  `https://maps.googleapis.com/maps/api/geocode/json?address=${ort}+${bundesland}&key=${mapToken}`;
 
 function httpGet(theUrl) {
   const xmlHttp = new XMLHttpRequest();
@@ -13,15 +13,33 @@ function httpGet(theUrl) {
   return xmlHttp.responseText;
 }
 
-const geoData = (url) => JSON.parse(httpGet(url)).features[0].geometry;
+const geoData = (url) => {
+  try {
+    const geo_maps_req = JSON.parse(httpGet(url)).results[0].geometry.location;
+    const lat = geo_maps_req.lat;
+    const lng = geo_maps_req.lng;
+    return { coordinates: [lng, lat] };
+  } catch (e) {
+    return { coordinates: [] };
+  }
+};
 
 const geoShortCode = (url) => {
-  if (
-    JSON.parse(httpGet(url)).features[0].properties.short_code === undefined
-  ) {
-    return JSON.parse(httpGet(url)).features[0].context[0].short_code;
-  } else {
-    return JSON.parse(httpGet(url)).features[0].properties.short_code;
+  const api_req_data = JSON.parse(httpGet(url)).results[0].address_components;
+  try {
+    if (api_req_data !== undefined) {
+      return api_req_data[api_req_data.length - 2].short_name;
+    } else {
+      if (
+        JSON.parse(httpGet(url)).features[0].properties.short_code === undefined
+      ) {
+        return JSON.parse(httpGet(url)).features[0].context[0].short_code;
+      } else {
+        return JSON.parse(httpGet(url)).features[0].properties.short_code;
+      }
+    }
+  } catch (e) {
+    return [];
   }
 };
 
