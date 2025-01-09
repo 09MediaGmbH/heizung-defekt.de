@@ -26,6 +26,7 @@
         "nodemon": "^2.0.15",
         "random-item": "^4.0.1",
         "request": "^2.88.2",
+        "solar.http-link.de_express": "file:",
         "xmlhttprequest": "1.8.0"
     }
 }
